@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import './Users.css'
+import User from "./User";
 
 export default function Users(){
     const [users, setUsers] = useState([]);
@@ -10,8 +12,11 @@ export default function Users(){
 
     
     return(
-        <div>
+        <div className="box">
             <h3>Users: {users.length}</h3>
+            {
+                users.map(user => <User user={user}></User>)
+            }
         </div>
     )
 }
